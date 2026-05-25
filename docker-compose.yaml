@@ -18,7 +18,7 @@ services:
     depends_on:
       - db
 
-  nginx:
+  frontend:
     image: nginx:latest
     ports:
       - "80:80"

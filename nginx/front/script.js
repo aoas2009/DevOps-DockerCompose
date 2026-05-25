@@ -17,7 +17,7 @@ async function listar() {
         `).join("")
     }
     else{
-        table.remove()
+        table.innerHTML = "Houve um problema! Cheque se o banco tem registros, ou está ligado :P"
     }
     
 }
