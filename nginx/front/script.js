@@ -1,7 +1,12 @@
 console.log("hello World")
 
+// Local (docker compose) usa o backend em localhost:3001; publicado usa o backend no Render
+const API_URL = ["localhost", "127.0.0.1"].includes(window.location.hostname)
+    ? "http://localhost:3001"
+    : "https://devops-backend-fnrq.onrender.com"
+
 async function listar() {
-    const res = await fetch("http://localhost:3001/usuarios")
+    const res = await fetch(`${API_URL}/usuarios`)
     const dados = await res.json()
 
     console.log(dados)
