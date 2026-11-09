@@ -6,8 +6,10 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+
 def get_conn():
     return psycopg2.connect(os.environ["DATABASE_URL"])
+
 
 @app.route("/usuarios")
 def usuarios():
@@ -17,6 +19,7 @@ def usuarios():
     rows = cur.fetchall()
     conn.close()
     return jsonify(rows)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=3001)
